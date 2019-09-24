@@ -1,20 +1,29 @@
-<ion-content class="custom-bacgroud1">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <h1 text-center>Page de connextion</h1>
+<ion-content class="custom-bacgroud1 otherbkg">
+  <div  class="otherbkg">
 
-  <form [formGroup]="loginForm">
-    <ion-item>
-      <ion-label position="floating">Nom d'utilisateur</ion-label>
-      <ion-input formControlName="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input formControlName="password"></ion-input>
-    </ion-item>
-    <ion-button expand="full" (click)="login()">Se connecter</ion-button>
-  </form>
+    <div style="display: flex;">
+      <img style="margin: auto; position: relative;
+      width: 150px; top: 7em;" src="assets/logo.png" alt="">
+    </div>
+
+
+    <form [formGroup]="loginForm" class="form-background">
+      <ion-item>
+        <!-- <ion-label position="fixed">Nom d'utilisateur</ion-label> -->
+        <ion-input placeholder="Nom d'utilisateur" formControlName="username">
+          <ion-icon slot="start" name="mail"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="floating">Mot de passe</ion-label> -->
+        <ion-input placeholder="Mot de passe" formControlName="password">
+          <ion-icon slot="start" name="lock"></ion-icon>
+        </ion-input>
+      </ion-item>
+     
+      <ion-button class="button-login" expand="full" (click)="login()">Se connecter</ion-button>
+      <div class="login-ou">  <hr> <p>OU</p> <hr> </div>
+      <ion-button class="button-login" expand="full" (click)="login()">S'inscrire</ion-button> 
+    </form>
+  </div>
 </ion-content>
